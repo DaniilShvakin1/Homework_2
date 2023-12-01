@@ -1,12 +1,31 @@
-a = [{"question": "Куда идти", "answer": [{"текст": "направо", "Link": 1}, {"текст": "налево", "Link": 2}]},
-     {"question": "Вы пошли направо", "answer": [{"текст": "направо", "Link": 1}, {"текст": "налево", "Link": 2}]},
-     {"question": "Куда идти", "answer": [{"текст": "направо", "Link": 1}, {"текст": "налево", "Link": 2}]}]
-current_step = a[0]
-while True:
-    print(current_step["question"])
-    for answer in current_step["answer"]:
-        print(answer["текст"])
-        str(current_step["answer"].index(answer))
-        out = int(input())
-        answer = current_step["answer"][out]
-        current_step = a[answer["Link"]]
+def stop_story():
+    global step
+    step = 0
+
+
+while step > 0:
+    if step == 1:
+        print("Вы пришли к развилке ")
+        print("куда идти")
+        print("направо 0")
+        print("налево 1")
+        answer = int(input())
+        if answer == 0:
+            print("Вы пошли направо")
+            step = 2
+        if answer == 1:
+            print("вы пошли налево")
+            step = 3
+    if step == 2:
+        print("Вы пришли к развилке")
+        print("Куда идти")
+        print("направо 0")
+        print("налево 1")
+        answer = int(input())
+        if answer == 0:
+            print("Вы пошли направо")
+            print("Вы умерли")
+            raise SystemExit
+        if answer == 1:
+            print("вы пошли налево")
+            step = 3
