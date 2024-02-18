@@ -1,7 +1,16 @@
-#План решения задания №2
-"""
-1) Перевести буквы в цифры
-2) Сложить буквенные значения
-3) Буквы перевести в 4 систему исчесления
-4) И по делить между собой
-"""
+import sys
+from PyQt5 import uic
+from PyQt5.QtWidgets import QApplication, QMainWindow
+
+
+class App(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("from.ui", self)
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ex = App()
+    ex.show()
+    sys.exit(app.exec())
