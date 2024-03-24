@@ -1,5 +1,5 @@
 import pygame
-from characters import Character, Osel,
+from characters import Character, Osel, Bird
 from coins import Coin
 
 
